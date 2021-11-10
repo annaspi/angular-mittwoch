@@ -12,6 +12,7 @@ export class AppComponent {
 
   timerison:boolean=false
   Timer:number=0
+  status:boolean=false
 
   onNext(){
     if(this.counter < this.Bilder.length-1){
@@ -31,6 +32,7 @@ export class AppComponent {
 
   addUrl(event: Event){
     const url = (<HTMLInputElement>event.target).value;
+    this.status=false
     if (this.timerison){
       clearTimeout(this.Timer)
     }
@@ -40,8 +42,8 @@ export class AppComponent {
       if(url.endsWith(".jpg")){
         this.Bilder.push(url);
       }else{
-        console.log("Bitte gültige Url angeben")
-      }    },5000)
+        this.status=true
+      }    },1000)
 
 
   }

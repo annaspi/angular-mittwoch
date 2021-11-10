@@ -1,4 +1,9 @@
-
+<head><style>
+  .borderexample {
+    width: 70px;
+    height:50px;
+  }
+</style></head>
 <div>
   <img [src]="Bilder[counter]" width="500" height="270">
 </div>
@@ -8,7 +13,10 @@
 <div>
   <input type="text" placeholder="Url" (input)="addUrl($event)">
 </div>
+<div id='Fehlermeldung' class="borderexample"> <p *ngIf="status" style="padding: 10px; border: 2px solid #ff0000;"
+>Failed!</p> </div>
 <div>
 <table><tr *ngFor="let url of Bilder"><td>{{url}}</td><td>  <button (click)="deleteurl(url)">Delete</button>
 </td></tr></table>
 </div>
+
