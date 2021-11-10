@@ -9,5 +9,6 @@
   <input type="text" placeholder="Url" (input)="addUrl($event)">
 </div>
 <div>
-  <p *ngFor="let url of Bilder">{{url}}</p>
+<table><tr *ngFor="let url of Bilder"><td>{{url}}</td><td>  <button (click)="deleteurl(url)">Delete</button>
+</td></tr></table>
 </div>

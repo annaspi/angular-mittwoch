@@ -19,6 +19,13 @@ export class AppComponent {
     }
   }
 
+  deleteurl(url:string){
+    const index = this.Bilder.indexOf(url, 0);
+    if (index > -1) {
+      this.Bilder.splice(index, 1);
+    }
+  }
+
   addUrl(event: Event){
     const url = (<HTMLInputElement>event.target).value;
     if(url.endsWith(".jpg")){
