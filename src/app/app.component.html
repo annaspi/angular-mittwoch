@@ -3,7 +3,16 @@
     width: 70px;
     height:50px;
   }
-</style></head>
+  table,tr,td{
+    border:1px solid black;
+    border-radius:10px
+  }
+</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 <div>
   <img [src]="Bilder[counter]" width="500" height="270">
 </div>
@@ -16,7 +25,9 @@
 <div id='Fehlermeldung' class="borderexample"> <p *ngIf="status" style="padding: 10px; border: 2px solid #ff0000;"
 >Failed!</p> </div>
 <div>
-<table><tr *ngFor="let url of Bilder"><td>{{url}}</td><td>  <button (click)="deleteurl(url)">Delete</button>
+<table><tr *ngFor="let url of Bilder"><td>{{url}}</td><td style="width:100px;text-align:center">  <button (click)="deleteurl(url)"><span class="glyphicon glyphicon-trash" style="color:red"></span>
+
+</button>
 </td></tr></table>
 </div>
 
