@@ -12,7 +12,7 @@ export class AppComponent {
 
   timerison:boolean=false
   Timer:number=0
-  status:boolean=false
+  status:number=0
 
   onNext(){
     if(this.counter < this.Bilder.length-1){
@@ -32,7 +32,7 @@ export class AppComponent {
 
   addUrl(event: Event){
     const url = (<HTMLInputElement>event.target).value;
-    this.status=false
+    this.status=0
     if (this.timerison){
       clearTimeout(this.Timer)
     }
@@ -41,13 +41,17 @@ export class AppComponent {
       this.timerison=false
       if(url.endsWith(".jpg")){
         this.Bilder.push(url);
+        this.status=2
       }else{
-        this.status=true
+        this.status=1
       }    },1000)
 
 
   }
+  returntest(url:string){
+    return this.Bilder.indexOf(url, 0)+1;
 
+  }
 
 
 }

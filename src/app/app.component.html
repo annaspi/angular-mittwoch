@@ -1,10 +1,14 @@
 <head><style>
+  div{
+    margin-left: 50px;
+    margin-top: 50px;
+  }
   .borderexample {
-    width: 70px;
+    width: 80px;
     height:50px;
   }
   table,tr,td{
-    border:1px solid black;
+    border:1px ;
     border-radius:10px
   }
 </style>
@@ -22,12 +26,18 @@
 <div>
   <input type="text" placeholder="Url" (input)="addUrl($event)">
 </div>
-<div id='Fehlermeldung' class="borderexample"> <p *ngIf="status" style="padding: 10px; border: 2px solid #ff0000;"
->Failed!</p> </div>
+<div id='Fehlermeldung' class="borderexample"> <p *ngIf="status==1" style="padding: 10px; border: 2px solid #ff0000;"
+>Failed!</p><p *ngIf="status==2" style="padding: 10px; border: 2px solid #22ff00;"
+>Success!</p> </div>
 <div>
-<table><tr *ngFor="let url of Bilder"><td>{{url}}</td><td style="width:100px;text-align:center">  <button (click)="deleteurl(url)"><span class="glyphicon glyphicon-trash" style="color:red"></span>
-
-</button>
-</td></tr></table>
+<table>
+  <tr *ngFor="let url of Bilder">
+    <td style="width:20px;
+    text-align:center">{{returntest(url)}}</td>
+    <td>{{url}}</td>
+    <td style="width:100px;
+    text-align:center"><button (click)="deleteurl(url)"><span class="glyphicon glyphicon-trash" style="color:red"></span></button></td>
+  </tr>
+</table>
 </div>
 
